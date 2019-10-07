@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin: 10% 0;
+  min-height: 200px;
+  align-items: center;
+}
+
+#textField{
+  border: none;
+  padding: 10px;
+  margin: 10px 0px;
+  height: 20px;
+  width: 500px;
+  border: 1px solid #eaeaea;
+  outline: none;
+}
+
+#textField:hover{
+  border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
+}
+
+#textField:focus{
+  border-color:#4d90fe;
+}
+
+#goButton{
+  border: none;
+  padding: 12px;
+  margin: 10px 0px;
+  border: 1px solid #eaeaea;
+  outline: none;
+}
+
+#goButton:hover{
+  border-color:#4d90fe;
+  background: #84c3d1;
+  color: #fff;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+label{
+  padding: 3px;
+}

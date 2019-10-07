@@ -4,29 +4,42 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-		function setSearchEngine() {
-			console.log("setSearchEngine() function has run successfully...");
+	function setSearchEngine() {
+		let engine = document.querySelector("input[name=engine]:checked");
+		let actions = {
+			"google": "https://www.google.com/search",
+			"duckDuckGo": "https://duckduckgo.com/",
+			"bing": "https://www.bing.com/search",
+			"ask": "https://www.ask.com/web"
 		}
+		let engineValue = engine.value;
+		let actionURL = actions[engineValue];
+		let textField = document.getElementById("textField");
+		if (textField.value === "") {
+			alert("You are missing a search criteria.");
+			event.preventDefault();
+		}
+		document.getElementById("searchForm").action = actionURL;
+	}
     window.addEventListener("load", function(){
 		console.log("Window loaded.")
 		// TODO: register the handler
-		document.getElementById("submit").addEventListener("click", function () {
-			setSearchEngine();
-		});
+		let form = document.querySelector("form");
+		form.addEventListener("submit", setSearchEngine);
     });
 	</script>
+	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-	<form id="searchForm" method="GET">
+	<form id="searchForm" action="/" method="GET">
 	<!-- TODO: add form elements -->
-		<input type="text" name="q">
-		<label>Google <input type="radio" name="engine" value="google"/></label>
-		<label>DuckDuckGo <input type="radio" name="engine" value="duckDuckGo"/></label>
-		<label>Bing <input type="radio" name="engine" value="bing"/></label>
-		<label>Ask <input type="radio" name="engine" value="ask"/></label>
-		<button value="GO!" id="submit">Go!</button>
+		<input type="text" name="q" id="textField"><input type="submit" value="Go!" id="goButton"><br>
+		<label>Google <input type="radio" name="engine" value="google" class="radio" checked/></label>
+		<label>DuckDuckGo <input type="radio" name="engine" value="duckDuckGo" class="radio"/></label>
+		<label>Bing <input type="radio" name="engine" value="bing" class="radio"/></label>
+		<label>Ask <input type="radio" name="engine" value="ask" class="radio"/></label> 
 	</form>
 
 </body>
