@@ -7,10 +7,10 @@
 	function setSearchEngine() {
 		let engine = document.querySelector("input[name=engine]:checked");
 		let actions = {
-			"google": "https://www.google.com/search",
-			"duckDuckGo": "https://duckduckgo.com/",
-			"bing": "https://www.bing.com/search",
-			"ask": "https://www.ask.com/web"
+			google: "https://www.google.com/search",
+			duckDuckGo: "https://duckduckgo.com/",
+			bing: "https://www.bing.com/search",
+			ask: "https://www.ask.com/web"
 		}
 		let engineValue = engine.value;
 		let actionURL = actions[engineValue];
